@@ -33,10 +33,15 @@
 
 .list.record-items li .properties {
   flex-basis: 100%;
-  padding: 1rem;  
+  padding: 1rem;
   display: grid;
   grid-template-columns: 48px 1fr;
   grid-template-rows: 1fr;
+}
+
+.list.record-items li.mini .properties {
+  padding: 1px;
+  align-items: center;
 }
 
 .list.record-items li .properties .icon {
@@ -59,9 +64,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .list.record-items li .properties .text .meta {
   display: flex;
+}
+
+.list.record-items li.mini .properties .text .meta {
+  margin: 0 1rem 0 0;
 }
 
 .list.record-items li .properties .text .meta .commonality,
@@ -97,6 +105,10 @@
   transition: color .25s;
 }
 
+.list.record-items li.mini .properties .text .description {
+  display: none;
+}
+
 .list.record-items li.no-description .properties .text .description {
   display: none;
 }
@@ -104,6 +116,10 @@
 .list.record-items li .objectives {
   flex-basis: 100%;
   padding: 0 1rem 1rem;
+}
+
+.list.record-items li.mini .objectives {
+  display: none;
 }
 
 .list.record-items li .rewards {
@@ -386,7 +402,7 @@
   .list.record-items li .track-this {
     opacity: 1;
   }
-  
+
 }
 
 @media screen and (max-width: 600px) {

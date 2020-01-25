@@ -142,7 +142,7 @@ class Records extends React.Component {
   };
 
   render() {
-    const { t, hashes, member, triumphs, collectibles, ordered, limit, selfLinkFrom, readLink, forceDisplay = false } = this.props;
+    const { t, hashes, member, triumphs, collectibles, ordered, limit, selfLinkFrom, readLink, forceDisplay = false, mini = false } = this.props;
     const highlight = parseInt(this.props.highlight, 10) || false;
     const recordsRequested = collectibles.hideDudRecords && !forceDisplay ? hashes.filter(hash => dudRecords.indexOf(hash) === -1) : hashes;
     const characterId = member && member.characterId;
@@ -411,7 +411,8 @@ class Records extends React.Component {
                 unredeemed: !enumerateRecordState(enumerableState).recordRedeemed && !enumerateRecordState(enumerableState).objectiveNotCompleted,
                 tracked: tracked.concat(profileRecordsTracked).includes(definitionRecord.hash) && !enumerateRecordState(enumerableState).recordRedeemed && enumerateRecordState(enumerableState).objectiveNotCompleted,
                 'no-description': !description,
-                'has-intervals': recordState.intervals.length
+                'has-intervals': recordState.intervals.length,
+                mini: mini
               })}
             >
               {!enumerateRecordState(enumerableState).recordRedeemed && enumerateRecordState(enumerableState).objectiveNotCompleted && !profileRecordsTracked.includes(definitionRecord.hash) ? (
