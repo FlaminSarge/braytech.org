@@ -904,7 +904,8 @@ export const nightfalls = {
     affectsSpeedEmblemObjective: true,
   },
   3718330161: {
-    // Nightfall: Tree of Probabilities    sort: 15,
+    // Nightfall: Tree of Probabilities
+    sort: 15,
     records: [
       2282894388, // Tree of Probabilities
       3636866482, // Laser Dodger
